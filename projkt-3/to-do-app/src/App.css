@@ -1,0 +1,216 @@
+:root {
+  --bg: #e6eef9;
+  --card: #ffffff;
+  --muted: #6b7280;
+  --text: #0f172a;
+  --accent: #5b21b6;
+  --danger: #b91c1c;
+  --border: #e9eef8;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+}
+
+.app-layout {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.body-container {
+  flex: 1 1 640px;
+  max-width: 720px;
+  display: grid;
+  gap: 1.25rem;
+  width: 100%;
+}
+
+.side-counter {
+  flex: 0 0 320px;
+  width: 100%;
+  max-width: 320px;
+}
+
+.side-counter .counter-container {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08);
+  padding: 1.5rem;
+}
+
+.side-counter .counter-container p {
+  margin: 0.8rem 0;
+  color: #334155;
+  font-size: 0.98rem;
+}
+
+.side-counter .counter-container p:first-child {
+  margin-top: 0;
+}
+
+.side-counter .counter-container p:last-child {
+  margin-bottom: 0;
+}
+
+.form-container {
+  width: 100%;
+  background: var(--card);
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
+  padding: 1.25rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.form-container label {
+  grid-column: 1 / -1;
+  display: block;
+  margin-bottom: 0.25rem;
+  color: #334155;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.form-container input {
+  grid-column: 1 / 2;
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid #d1d9e6;
+  border-radius: 12px;
+  background: #fbfdff;
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.form-container input:focus {
+  border-color: rgba(124, 58, 237, 0.9);
+  box-shadow: 0 0 0 6px rgba(124, 58, 237, 0.08);
+}
+
+.add-btn {
+  grid-column: 2 / 3;
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 10px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 1.25rem;
+  cursor: pointer;
+  display: inline-grid;
+  place-items: center;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.add-btn:hover {
+  transform: translateY(-2px);
+  background: #4c1d95;
+}
+
+.list-container {
+  width: 100%;
+  list-style: none;
+  display: grid;
+  gap: 0.7rem;
+  margin-top: 0.25rem;
+  padding-left: 0;
+}
+
+.todo-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem 1rem;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.03);
+}
+
+.todo-container span {
+  color: var(--text);
+  font-size: 1rem;
+  line-height: 1.4;
+  word-break: break-word;
+  cursor: pointer;
+  padding: 0.15rem 0.2rem;
+  border-radius: 6px;
+}
+
+.todo-container span:hover {
+  background: rgba(15, 23, 42, 0.03);
+}
+
+.todo-container span.completed {
+  text-decoration: line-through;
+  color: var(--muted);
+  opacity: 0.95;
+}
+
+.edit-input {
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid #c1c9da;
+  border-radius: 10px;
+  background: #fff;
+  color: var(--text);
+  font-size: 0.98rem;
+  outline: none;
+}
+
+.edit-input:focus {
+  border-color: rgba(124, 58, 237, 0.9);
+  box-shadow: 0 0 0 6px rgba(124, 58, 237, 0.06);
+}
+
+.delete-btn {
+  background: #fff5f5;
+  color: var(--danger);
+  border: 1px solid #fee2e2;
+  padding: 0.5rem 0.8rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.delete-btn:hover {
+  background: #fee2e2;
+  color: #7f1d1d;
+}
+
+@media (max-width: 900px) {
+  .app-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .side-counter {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 960px) {
+  .app-layout {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .side-counter {
+    max-width: 100%;
+  }
+}
